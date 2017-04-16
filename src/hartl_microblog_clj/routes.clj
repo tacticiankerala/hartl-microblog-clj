@@ -14,7 +14,9 @@
 
 ;; Tabular routes
 (def routes #{["/" :get (conj common-interceptors `home-page-controller/index)]
-              ["/login" :get (conj common-interceptors `login-controller/show-login)]})
+              ["/login" :get (conj common-interceptors `login-controller/show-login)]
+              ["/signup" :get (conj common-interceptors `login-controller/show-signup)]
+              })
 
 ;; Map-based routes
                                         ;(def routes `{"/" {:interceptors [(body-params/body-params) http/html-body]

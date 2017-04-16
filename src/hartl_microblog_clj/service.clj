@@ -1,5 +1,6 @@
 (ns hartl-microblog-clj.service
   (:require [io.pedestal.http :as http]
+            [io.pedestal.http.secure-headers :as secure-headers]
             [hartl-microblog-clj.routes :as r]))
 
 
@@ -22,7 +23,9 @@
               ;;::http/allowed-origins ["scheme://host:port"]
 
               ;; Root for resource interceptor that is available by default.
-              ::http/resource-path     "/public"
+              ::http/resource-path     r/static-resources-root
+
+              ::http/secure-headers    {:content-security-policy-settings (secure-headers/content-security-policy-header {:default-src "'self'"})}
 
               ;; Either :jetty, :immutant or :tomcat (see comments in project.clj)
               ::http/type              :jetty

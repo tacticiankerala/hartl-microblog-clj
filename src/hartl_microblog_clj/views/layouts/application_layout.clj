@@ -1,11 +1,11 @@
 (ns hartl-microblog-clj.views.layouts.application-layout
   (:require [hiccup.page :as p]
-            [io.pedestal.http.route :as route]
+            [hartl-microblog-clj.views.view-helper :as h]
             [hartl-microblog-clj.views.partials.navbar :as nav]))
 
 (defn app-links []
-  [{:title "Home" :href (route/url-for :hartl-microblog-clj.controllers.home-page-controller/index)}
-   {:title "Login" :href (route/url-for :hartl-microblog-clj.controllers.login-controller/show-login)}])
+  [{:title "Home" :href (h/url-for :hartl-microblog-clj.controllers.home-page-controller/index)}
+   {:title "Login" :href (h/url-for :hartl-microblog-clj.controllers.login-controller/show-login)}])
 
 
 (defn layout [view current-path]

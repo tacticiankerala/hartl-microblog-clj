@@ -1,6 +1,8 @@
 # hartl-microblog-clj
 
-FIXME
+Trying to follow the famous [Michael Hartl's RoR Tutorial](https://www.railstutorial.org/book) to create a Microblogging site in Clojure with Pedestal!
+
+![Alt text](/screenshots/home-page.png?raw=true "Home Page")
 
 ## Getting Started
 
